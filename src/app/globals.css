@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --card: #16161f;
+  --border: #2a2a3a;
+  --neon-pink: #ff2d78;
+  --neon-purple: #a855f7;
+}
+
+html {
+  background-color: var(--bg);
+  color: #f0f0f8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  overscroll-behavior: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Snap scroll container */
+.feed-container {
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+.feed-slide {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100dvh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon-pink);
+  border-radius: 9999px;
+}
+
+/* Neon glow utilities */
+.glow-pink {
+  box-shadow: 0 0 10px rgba(255, 45, 120, 0.5), 0 0 30px rgba(255, 45, 120, 0.2);
+}
+.glow-purple {
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5), 0 0 30px rgba(168, 85, 247, 0.2);
+}
+.text-glow-pink {
+  text-shadow: 0 0 12px rgba(255, 45, 120, 0.8);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff2d78 0%, #a855f7 60%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Category chip active state */
+.chip-active {
+  background: linear-gradient(135deg, #ff2d78, #a855f7);
+  box-shadow: 0 0 12px rgba(255, 45, 120, 0.4);
+}
+
+/* Tab underline active */
+.tab-active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff2d78, #a855f7);
+  border-radius: 9999px;
+}

@@ -1,4 +1,4 @@
-# ArxivTok 🔬📱
+# Papertok 🔬📱
 
 > **Jurnal ilmiah. Semudah scroll TikTok.**
 >
